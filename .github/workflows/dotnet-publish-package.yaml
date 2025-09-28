@@ -13,7 +13,7 @@ on:
         required: true
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-lr
     steps:
       - uses: actions/checkout@v2
       - name: Setup dotnet
@@ -38,3 +38,4 @@ jobs:
         run: dotnet nuget push ${{inputs.project}}/bin/Release/*.nupkg --source https://www.myget.org/F/fireflybackbone/api/v2/package -k "$MYGETTOKEN"
         env:
           MYGETTOKEN: ${{secrets.MYGETTOKEN}}
+
