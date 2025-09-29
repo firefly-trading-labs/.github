@@ -15,7 +15,7 @@ jobs:
   test:
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest-lr]
+        os: [windows-latest-lr, ubuntu-latest-lr]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
@@ -43,4 +43,5 @@ jobs:
           name: test-results-${{ inputs.project-name }}
           path: results-${{ inputs.project-name }}
         if: ${{ always() }}
+
 
